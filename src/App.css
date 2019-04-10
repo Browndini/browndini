@@ -1,33 +1,56 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  height: 50px;
+  margin-top: 20px;
+}
+.navi {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex: 6 200px;
+  flex: 6 200px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.header-item.name {
+  -webkit-flex: 1 230px;
+  flex: 1 230px;
+  font-family: "Nunito", sans-serif;
+  color: #FF9F1C;
+}
+.App {
+  display: flex;
+  text-align: center;
+  background: #0E3745;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.navi .link {
+  padding: 0.3rem 2rem;
+  color: #FF9F1C;
+  position: relative;
+  text-decoration: none;
+  margin: 0 2rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navi .link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #CBF3F0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.navi .link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
